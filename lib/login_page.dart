@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'conponents/InputTextField.dart';
 import 'conponents/button.dart';
 import 'conponents/icon_login.dart';
+import 'signup_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -58,16 +59,18 @@ class _LoginPageState extends State<LoginPage> {
                         setState(() {
                           checkedValue = newValue;
                         });
+                       
                       }),
-                  const Text(
-                    'Remember me',
-                    style: TextStyle(color: Colors.white),
-                  ),
+                       const Text('Remember me',style: TextStyle(color: Colors.white),),
+                  
                   const SizedBox(width: 130),
                   Expanded(
                     child: GestureDetector(
                         onTap: () {
-                          setState(() {});
+                          setState(() {
+                            print('Forgot password is clicked');
+
+                          });
                         },
                         child: const Text('Forgot Password',
                             style: TextStyle(
@@ -79,7 +82,9 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(
                 height: 10,
               ),
-              const LoginButton(),
+              Button(buttonText: 'Log in',onTap: () {
+               print('Login button is clicked');
+             },),
               const SizedBox(
                 height: 80,
               ),
@@ -119,6 +124,11 @@ class _LoginPageState extends State<LoginPage> {
                 children: [
                   const Text('Don\'t have an account ?',style: TextStyle(color: Colors.white),),
                   GestureDetector(
+                    onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return SignUpPage();
+                    }));
+                    },
                     child: const Text('Sign up',style: TextStyle(color: Colors.red,fontWeight: FontWeight.bold),),
                   )
                 ],

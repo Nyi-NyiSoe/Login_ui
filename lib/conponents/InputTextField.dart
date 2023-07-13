@@ -24,10 +24,10 @@ class InputTextField extends StatelessWidget {
          prefixIcon: Icon(iconName,color: Colors.white,),
          hintText: hintText,
          hintStyle: const TextStyle(color: Colors.white,),
-         border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+         border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
          focusedBorder:  const OutlineInputBorder(
           borderSide: BorderSide(color: Colors.red),
-           borderRadius: BorderRadius.all(Radius.circular(10)),
+           borderRadius: BorderRadius.all(Radius.circular(20)),
            
          ),
         
